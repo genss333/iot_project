@@ -29,6 +29,7 @@ $arrLed
                         <th scope="col"># id</th>
                         <th scope="col">Device Name</th>
                         <th scope="col">Status</th>
+                        <th scope="col">Close</th>
                         <th scope="col"></th>
                     </tr>
                 </thead>
@@ -50,6 +51,19 @@ $arrLed
                                                                     }
                                                                     ?>"><?php echo $row["status"] ?>
                                     </span>
+                                </td>
+                                <td>
+                                    <?php
+                                    $currentTime = date("H:i");
+
+                                    $desiredTime = $row["close_date_time"];
+
+                                    if ($currentTime <= $desiredTime) {
+                                        echo $row["close_date_time"];
+                                    } else {
+                                        echo "";
+                                    }
+                                    ?>
                                 </td>
                                 <td>
                                     <input class="form-check-input" name="id[]" type="checkbox" value="<?php echo $row["id"] ?>" id="flexCheckChecked">

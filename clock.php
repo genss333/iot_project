@@ -42,7 +42,7 @@ $item = $result->fetch_assoc();
         <form action="clockled.php?id=<?php echo $id ?>" method="post">
             <div class="form-group">
                 <label for="exampleInputDateTime">ตั้งเวลาปิด</label>
-                <input type="datetime-local" name ="close" class="form-control">
+                <input type="time" name ="close" class="form-control">
             </div>
             <div class="footer">
                 <div class="container">

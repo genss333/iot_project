@@ -18,4 +18,11 @@ if ($_SERVER['REQUEST_METHOD'] == "GET") {
         header('Content-Type: text/html; charset=utf-8');
         echo json_encode($row);
     }
+}else if ($_SERVER['REQUEST_METHOD'] == "POST") {
+    $id = $_POST['id'];
+    $sql = "UPDATE `tbdevices` SET `status` = 'OFF' WHERE `tbdevices`.`id` = '$id'";
+    $result = $conn->query($sql);
+    //return id
+    header('Content-Type: text/html; charset=utf-8');
+    echo json_encode($id);
 }
